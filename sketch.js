@@ -67,6 +67,7 @@ function draw() {
   );
   pop();
 
+  //this opens a window to watch the trailer
   push();
   let buttonText1 = "HERE";
   button1 = createButton(buttonText1);
@@ -87,11 +88,7 @@ function draw() {
     window.open("https://www.youtube.com/watch?v=s-7pyIxz8Qg");
   });
 
-  // singleButton.style("border-radius: 50px");
-  // singleButton.style("background-color: white");
-  // singleButton.style("border: 2px solid blue");
-  // singleButton.style("font-size: 30px");
-
+  //button for the soundtrack
   push();
   let buttonText2 = "PLAY SOUNDTRACK";
   button2 = createButton(buttonText2);
@@ -105,10 +102,10 @@ function draw() {
   button2.position(windowWidth / 1.2, windowHeight / 17);
   pop();
 
+  //play and stop the soundtrack
   button2.mousePressed(function () {
     if (soundtrack.isPlaying()) {
       soundtrack.stop();
-      buttonText2 = "STOP";
     } else {
       soundtrack.play();
     }
