@@ -11,7 +11,7 @@ function draw() {
   backgroundImage(sfondo);
   push();
   textAlign(CENTER);
-  textSize(380);
+  textSize(350);
   noStroke();
   fill("red");
   text("CAUGHT!", width / 2, height / 1.5);
@@ -23,6 +23,6 @@ function backgroundImage(img) {
   translate(width / 2, height / 2);
   imageMode(CENTER);
   let scale = Math.max(width / img.width, height / img.height);
-  image(img, 0, 0, (img.width * scale) / 2, (img.height * scale) / 2);
+  image(img, 0, 0, img.width * scale, img.height * scale);
   pop();
 }

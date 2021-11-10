@@ -1,7 +1,7 @@
 const phrase = "CATCH ME IF YOU CAN";
 const words = phrase.split(" ");
 let allButtons;
-let bottone;
+// togli let bottone;
 let iterator = 0;
 let sfondo;
 let button1;
@@ -14,16 +14,16 @@ function setup() {
 
   //create a button with a single word of the phrase
   words.forEach((word) => {
-    bottone = createElement("button", word);
+    const bottone = createElement("button", word);
+
+    //what happens when you click on a button
+    bottone.mousePressed(function () {
+      console.log("caught");
+      window.open("caught.html", "_self");
+    });
   });
 
   allButtons = selectAll("button");
-
-  //what happens when you click on a button
-  bottone.mousePressed(function () {
-    console.log("caught");
-    window.open("caught.html", "_self");
-  });
 }
 
 function draw() {
@@ -32,7 +32,7 @@ function draw() {
   allButtons.forEach((singleButton, i) => {
     let x = noise((iterator + 40 * i) / 100) * windowWidth;
     let y = noise((iterator - 40 * i) / 100) * windowHeight;
-    //visual appearance of the buttons
+    // visual appearance of the buttons
     singleButton.style("position: absolute");
     singleButton.style("color: blue");
     singleButton.style("border-radius: 50px");
